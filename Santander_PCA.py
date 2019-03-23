@@ -97,7 +97,7 @@ ax.xaxis.set_ticks(np.arange(1, num_var, 50.0))
 plt.xticks(rotation=90)
 handles, labels = ax.get_legend_handles_labels()
 ax.legend(handles, labels)
-plt.savefig("pca_sree_plot", 
+plt.savefig("pca_exp_var_plot", 
     bbox_inches = 'tight', dpi=None, facecolor='w', edgecolor='b', 
     orientation='portrait', papertype=None, format=None, 
     transparent=True, pad_inches=0.25, frameon=None)  
@@ -111,7 +111,11 @@ plt.ylabel('% of Variance Explained')
 plt.xlabel('# of Principal Components')
 bar_df = pd.DataFrame({'var':pca.explained_variance_ratio_,'PC': pc_lst})
 sns.barplot(x='PC',y="var", data=bar_df, color="c")
-
+plt.savefig("pca_exp_var_barplot", 
+    bbox_inches = 'tight', dpi=None, facecolor='w', edgecolor='b', 
+    orientation='portrait', papertype=None, format=None, 
+    transparent=True, pad_inches=0.25, frameon=None)  
+plt.show()
 
 
 
